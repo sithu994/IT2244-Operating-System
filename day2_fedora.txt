@@ -1,0 +1,120 @@
+ls[root@DESKTOP-73GSIST ~]# ls
+new.txt
+[root@DESKTOP-73GSIST ~]# ls - ltr
+ls: cannot access '-': No such file or directory
+ls: cannot access 'ltr': No such file or directory
+[root@DESKTOP-73GSIST ~]# ls -ltr
+total 0
+-rw-r--r-- 1 root root 0 Mar 25 13:09 new.txt
+[root@DESKTOP-73GSIST ~]# find *.txt
+new.txt
+[root@DESKTOP-73GSIST ~]# chmod 444 new.txt //read
+[root@DESKTOP-73GSIST ~]# ls -ltr
+total 0
+-r--r--r-- 1 root root 0 Mar 25 13:09 new.txt
+[root@DESKTOP-73GSIST ~]# chmod 744 new.txt //read and write
+[root@DESKTOP-73GSIST ~]# ls -ltr
+total 0
+-rwxr--r-- 1 root root 0 Mar 25 13:09 new.txt
+Try 'wc --help' for more information.
+[root@DESKTOP-73GSIST ~]# wc -l new.txt //number of line 
+0 new.txt
+[root@DESKTOP-73GSIST ~]# touch test.csv
+[root@DESKTOP-73GSIST ~]# vi test.csv
+[root@DESKTOP-73GSIST ~]# more test.csv
+aa,11,12,13,14
+bb,21,22,23,24
+cc,31,32,33,34
+dd,41,42,43,44
+ee,51,52,53,54
+
+[root@DESKTOP-73GSIST ~]# less new.txt
+-bash: less: command not found
+[root@DESKTOP-73GSIST ~]# cut -d, -f1,3 test.csv
+aa,12
+bb,22
+cc,32
+dd,42
+ee,52
+
+[root@DESKTOP-73GSIST ~]# -f1 1 test.csv
+-bash: -f1: command not found
+[root@DESKTOP-73GSIST ~]# -f1,1 test.csv
+-bash: -f1,1: command not found
+[root@DESKTOP-73GSIST ~]# -f1,2  test.csv
+-bash: -f1,2: command not found
+[root@DESKTOP-73GSIST ~]# cut -d,-f1,2 test.csv
+cut: the delimiter must be a single character
+Try 'cut --help' for more information.
+[root@DESKTOP-73GSIST ~]# cut -d, -f1,2 test.csv
+aa,11
+bb,21
+cc,31
+dd,41
+ee,51
+
+[root@DESKTOP-73GSIST ~]# cut -d, -f4 test.csv
+13
+23
+33
+43
+53
+
+//Displays the first 2 rows of the file test.csv
+[root@DESKTOP-73GSIST ~]# head -2 test.csv
+aa,11,12,13,14
+bb,21,22,23,24
+
+// Displays the last 1 lines of 'test.csv'
+[root@DESKTOP-73GSIST ~]# tail -2 test.csv
+ee,51,52,53,54
+
+[root@DESKTOP-73GSIST ~]# tail -4 test.csv
+cc,31,32,33,34
+dd,41,42,43,44
+ee,51,52,53,54
+
+[root@DESKTOP-73GSIST ~]# touch test3.csv
+// Extracts the 1st and 2nd columns from 'test.csv' and saves them in 'test3.csv'
+[root@DESKTOP-73GSIST ~]# cut -d, -f1,2 test.csv > test3.csv
+[root@DESKTOP-73GSIST ~]# ls
+new.txt  test.csv  test3.csv
+// Counts the number of lines in 'test3.csv'
+[root@DESKTOP-73GSIST ~]# wc -l  test3.csv
+6 test3.csv
+[root@DESKTOP-73GSIST ~]# more test3.csv
+aa,11
+bb,21
+cc,31
+dd,41
+ee,51
+
+// Opens 'test3.csv' in the 'vi' editor
+[root@DESKTOP-73GSIST ~]# vi test3.csv
+// Extracts the first 3 rows from test.csv and appends (>>) them to rows_test1.csv
+[root@DESKTOP-73GSIST ~]# head -3 test.csv >> rows_test1.csv
+[root@DESKTOP-73GSIST ~]# ls
+new.txt  rows_test1.csv  test.csv  test3.csv
+[root@DESKTOP-73GSIST ~]# more rows_test1.csv
+aa,11,12,13,14
+bb,21,22,23,24
+cc,31,32,33,34
+
+// Prints the first column
+[root@DESKTOP-73GSIST ~]# awk -F, '{print$1}' test.csv
+aa
+bb
+cc
+dd
+ee
+
+// Prints the third column
+[root@DESKTOP-73GSIST ~]# awk -F, '{print$3}' test.csv
+12
+22
+32
+42
+52
+
+
+
