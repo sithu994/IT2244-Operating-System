@@ -1,0 +1,71 @@
+[root@DESKTOP-73GSIST ~]# cal
+	March 2025
+Su Mo Tu We Th Fr Sa
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31
+[root@DESKTOP-73GSIST ~]# ls
+abc.tsv  new.txt  rows_test1.csv  test.csv  test3.csv
+[root@DESKTOP-73GSIST ~]# is -ltr
+-bash: is: command not found
+[root@DESKTOP-73GSIST ~]# ls -ltr
+total 16
+-rwxr--r-- 1 root root   0 Mar 25 13:09 new.txt
+-rw-r--r-- 1 root root  76 Mar 31 13:21 test.csv
+-rw-r--r-- 1 root root  31 Mar 31 14:07 test3.csv
+-rw-r--r-- 1 root root  45 Mar 31 14:08 rows_test1.csv
+-rw-r--r-- 1 root root 150 Mar 31 22:01 abc.tsv
+[root@DESKTOP-73GSIST ~]# date +%d
+31
+[root@DESKTOP-73GSIST ~]# date +%y
+25
+[root@DESKTOP-73GSIST ~]# date +%A
+Monday
+[root@DESKTOP-73GSIST ~]# date +%V
+14
+[root@DESKTOP-73GSIST ~]# date +%v
+%v
+[root@DESKTOP-73GSIST ~]# date +%H
+23
+[root@DESKTOP-73GSIST ~]# date +%h
+Mar
+[root@DESKTOP-73GSIST ~]# date +%M
+14
+[root@DESKTOP-73GSIST ~]# date +%m
+03
+[root@DESKTOP-73GSIST ~]# date +%B
+March
+[root@DESKTOP-73GSIST ~]# date +%b
+Mar
+[root@DESKTOP-73GSIST ~]# vi program3.sh
+[root@DESKTOP-73GSIST ~]# more program3.sh
+echo "Who are you?"
+read name
+echo "Enter Number 1"
+read x
+echo "Enter Number 2"
+read y
+echo "Enter Number3"
+read z
+sum=$((x + y + z))
+avg=$((sum / 3))
+echo "Hi $name"
+echo "Summation: $sum"
+echo "Average: $avg"
+
+[root@DESKTOP-73GSIST ~]# chmod 777 program3.sh
+[root@DESKTOP-73GSIST ~]# ./program3.sh
+Who are you?
+sithu
+Enter Number 1
+40
+Enter Number 2
+30
+Enter Number3
+20
+Hi sithu
+Summation: 90
+Average: 30
