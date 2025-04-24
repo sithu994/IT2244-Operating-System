@@ -1,0 +1,279 @@
+Q1)Get the calender and date
+
+[root@DESKTOP-73GSIST ~]# cal
+-bash: cal: command not found
+
+[root@DESKTOP-73GSIST ~]# date
+Thu Apr 24 21:11:43 +0530 2025
+
+Q2)Get the student name and marks for the 3 subjects from user then calculate 
+output:-
+Enter the name:Isuru
+Enter the mark for subject1:80
+Enter the mark for subject2:90
+Enter the mark for subject3:70
+Total = 240
+Average = 80
+
+**
+[root@DESKTOP-73GSIST ~]# vi Question.sh
+[root@DESKTOP-73GSIST ~]# more Question.sh
+echo "Enter the name:"
+read $name
+echo "Enter the name:" $name
+echo "Enter the mark for subject1:"
+read x
+echo "Enter the mark for subject2:"
+read y
+echo "Enter the mark for subject3:"
+read z
+sum=$(( $x + $y + $z))
+avg=$(($sum/3))
+echo "Summation" $sum
+echo "Average" $avg
+[root@DESKTOP-73GSIST ~]# chmod 777 Question.sh
+[root@DESKTOP-73GSIST ~]# ./Question.sh
+Enter the name:
+isuru
+Enter the name:
+Enter the mark for subject1:
+80
+Enter the mark for subject2:
+90
+Enter the mark for subject3:
+70
+Summation 240
+Average 80
+
+Q3)create calculate with arithmatic operators
+output:-
+Enter the first number: 4
+Enter the second number: 2
+summation:6
+subdivition: 2
+division: 2
+Multiplication: 8
+
+**
+[root@DESKTOP-73GSIST ~]# vi arithmetic.sh
+[root@DESKTOP-73GSIST ~]# more arithmetic.sh
+echo "Enter the first number:"
+read x
+echo "Enter the second number:"
+read y
+sum=$(( $x + $y))
+sub=$(($x - $y))
+mul=$(($x * $y))
+div=$(($x / $y))
+echo "Enter the first number:" $x
+echo "Enter the second number:" $y
+echo "Summation" $sum
+echo "sub" $sub
+echo "mul" $mul
+echo "div" $div
+[root@DESKTOP-73GSIST ~]# chmod 777 arithmetic.sh
+[root@DESKTOP-73GSIST ~]# ./arithmetic.sh
+Enter the first number:
+4
+Enter the second number:
+2
+Enter the first number: 4
+Enter the second number: 2
+Summation 6
+sub 2
+mul 8
+div 2
+
+Q4)Get the days based on the user input number
+output:
+	Enter  the number : 3
+	Tuesday
+	
+***********
+[root@DESKTOP-73GSIST ~]# vi days.sh
+[root@DESKTOP-73GSIST ~]# more days.sh
+echo "Enter the number(1-7):"
+read number
+case $number in
+1)echo "The day is: Sunday";;
+2)echo "The day is: monday";;
+3)echo "The day is: Tuesday";;
+4) echo "The day is: Wednesday" ;;
+    5) echo "The day is: Thursday" ;;
+    6) echo "The day is: Friday" ;;
+    7) echo "The day is: Saturday" ;;
+    *) echo "Invalid number. Please enter a number between 1 and 7." ;;
+esac
+[root@DESKTOP-73GSIST ~]# chmod 777 days.sh
+[root@DESKTOP-73GSIST ~]# ./days.sh
+Enter the number(1-7):
+3
+The day is: Tuesday
+
+05).verify whether your user name is correct or not.(use your name as a )
+output:-
+Enter user name:
+Mino
+User name is correct
+Enter user name:
+Mina
+User name is incorrect
+
+****
+[root@DESKTOP-73GSIST ~]# vi username.sh
+[root@DESKTOP-73GSIST ~]# more username.sh
+correct_name="Mino"
+echo "Enter user name:"
+read entered_name
+if [ "$entered_name" == "$correct_name" ];then
+echo "User name is correct"
+else
+echo "User name is incorret"
+fi
+[root@DESKTOP-73GSIST ~]# chmod 777 username.sh
+[root@DESKTOP-73GSIST ~]# ./username.sh
+Enter user name:
+Mino
+User name is correct
+[root@DESKTOP-73GSIST ~]# sashi
+-bash: sashi: command not found
+
+Q6).Output :-Entered  two numbers:
+8 2
+8 is greater than 2
+Output :-Entered  two numbers:
+7 9
+7 is less than 9
+
+*****
+
+[root@DESKTOP-73GSIST ~]# vi number_value.sh
+[root@DESKTOP-73GSIST ~]# more number_value.sh
+echo "Enter two number:"
+read num1 num2
+
+if [ $num1 -gt $num2 ]; then
+echo "$num1 is greater than $num2"
+elif [ $num1 -lt $num2 ]; then
+echo "$num1 is less than $num2"
+else
+echo "$num1 is equal to $num2"
+fi
+[root@DESKTOP-73GSIST ~]# chmod 777 number_value.sh
+[root@DESKTOP-73GSIST ~]#  ./number_value.sh
+Enter two number:
+7 9
+7 is less than 9
+[root@DESKTOP-73GSIST ~]#  ./number_value.sh
+Enter two number:
+8 2
+8 is greater than 2
+
+Q7).Create simple calculator using "expr" command same as the Q3
+
+[root@DESKTOP-73GSIST ~]# vi calculator.sh
+[root@DESKTOP-73GSIST ~]# more calculator.sh
+echo "Enter first number:"
+read num1
+
+echo "Enter second number:"
+read num2
+
+echo "Choose operation (+, -, \*, /, %):"
+read op
+
+case $op in
+  +)
+    result=$(expr $num1 + $num2)
+    echo "Result: $result"
+    ;;
+  -)
+    result=$(expr $num1 - $num2)
+    echo "Result: $result"
+    ;;
+  \*)
+    result=$(expr $num1 \* $num2)
+    echo "Result: $result"
+    ;;
+  /)
+    result=$(expr $num1 / $num2)
+    echo "Result: $result"
+    ;;
+  %)
+    result=$(expr $num1 % $num2)
+    echo "Result: $result"
+    ;;
+  *)
+    echo "Invalid operation!"
+    ;;
+esac
+
+[root@DESKTOP-73GSIST ~]# chmod 777 calculator.sh
+[root@DESKTOP-73GSIST ~]# ./calculator.sh
+Enter first number:
+4
+Enter second number:
+2
+Choose operation (+, -, \*, /, %):
++
+Result: 6
+[root@DESKTOP-73GSIST ~]# ./calculator.sh
+Enter first number:
+4
+Enter second number:
+2
+Choose operation (+, -, \*, /, %):
+*
+Result: 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
