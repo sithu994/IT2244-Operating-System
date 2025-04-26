@@ -1,0 +1,128 @@
+
+iii)
+1
+22
+333
+4444
+55555
+666666
+
+for i in {1..6}
+do
+  for j in $(seq 1 $i)
+  do
+    echo -n "$i"
+  done
+  echo
+done
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi numberPattern.sh
+[root@DESKTOP-73GSIST ~]# more numberPattern.sh
+for i in {1..6}
+do
+  for j in $(seq 1 $i)
+  do
+    echo -n "$i"
+  done
+  echo
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 numberPattern.sh
+[root@DESKTOP-73GSIST ~]# ./numberPattern.sh
+1
+22
+333
+4444
+55555
+666666
+
+1v)
+
+1
+12
+123
+1234
+12345
+123456
+
+for i in {1..6}
+do
+  for j in $(seq 1 $i)
+  do
+    echo -n "$j"
+  done
+  echo
+done
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi numberPattern2.sh
+[root@DESKTOP-73GSIST ~]# more numberPattern2.sh
+for i in {1..6}
+do
+  for j in $(seq 1 $i)
+  do
+    echo -n "$j"
+  done
+  echo
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 numberPattern2.sh
+[root@DESKTOP-73GSIST ~]# ./numberPattern2.sh
+1
+12
+123
+1234
+12345
+123456
+
+v)
+
+
+          *
+	 * *
+	* * *
+       * * * *
+      * * * * *
+rows=5
+for i in $(seq 1 $rows)
+do
+  # Print spaces
+  for j in $(seq 1 $((rows - i)))
+  do
+    echo -n " "
+  done
+  # Print stars
+  for k in $(seq 1 $i)
+  do
+    echo -n "* "
+  done
+  echo
+done
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi numberPattern3.sh
+[root@DESKTOP-73GSIST ~]# more numberPattern3.sh
+rows=5
+for i in $(seq 1 $rows)
+do
+  # Print spaces
+  for j in $(seq 1 $((rows - i)))
+  do
+    echo -n " "
+  done
+  # Print stars
+  for k in $(seq 1 $i)
+  do
+    echo -n "* "
+  done
+  echo
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 numberPattern3.sh
+[root@DESKTOP-73GSIST ~]# ./numberPattern3.sh
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
