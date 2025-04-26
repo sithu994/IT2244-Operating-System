@@ -1,0 +1,259 @@
+01)
+Print multiplication table using for loop
+1 * 2 =2
+2*2 = 4
+
+:-
+[root@DESKTOP-73GSIST ~]# vi 04.25q1.sh
+[root@DESKTOP-73GSIST ~]# more 04.25q1.sh
+echo "Enter the number : "
+read x
+for (( i=1; i<=x; i++ ))
+do
+y=$((i*2))
+echo "$i * 2 = $y"
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 04.25q1.sh
+[root@DESKTOP-73GSIST ~]# ./04.25q1.sh
+Enter the number :
+8
+1 * 2 = 2
+2 * 2 = 4
+3 * 2 = 6
+4 * 2 = 8
+5 * 2 = 10
+6 * 2 = 12
+7 * 2 = 14
+8 * 2 = 16
+
+02)
+
+Q2).
+        *
+       ***
+      *****
+     *******
+    *********
+     *******
+      *****
+       ***
+	*
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi 04.25q2.sh
+[root@DESKTOP-73GSIST ~]# more 04.25q2.sh
+echo "Enter the number: "
+read input
+for((i=1; i<=input; i++))
+do
+for((j=i; j<input; j++))
+do
+echo -n " "
+done
+for((k=1; k<=((2*i-1)); k++))
+do
+echo -n  "*"
+done
+echo ""
+done
+
+for((i=input-1; i>=1; i--))
+do
+for((j=input; j>i; j--))
+do
+echo -n " "
+done
+for((k=1; k<=((2*i-1)); k++))
+do
+echo -n  "*"
+done
+echo ""
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 04.25q2.sh
+[root@DESKTOP-73GSIST ~]# ./04.25q2.sh
+Enter the number:
+5
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+Q3).*******
+    *     *
+    *     *
+    *     *
+    *     *
+    *******
+
+for ((i=1; i<=7; i++))
+do
+    echo -n "*"
+done
+echo ""
+
+for ((i=1; i<=4; i++))
+do
+    echo -n "*"
+    for ((j=1; j<=5; j++))
+    do
+        echo -n " "
+    done
+    echo "*"
+done
+for ((i=1; i<=7; i++))
+do
+    echo -n "*"
+done
+echo ""
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi 04.25q3.sh
+[root@DESKTOP-73GSIST ~]# more 04.25q3.sh
+for((i=1; i<=7; i++))
+do
+    echo -n "*"
+done
+echo ""
+
+for ((i=1; i<=4; i++))
+do
+    echo -n "*"
+    for ((j=1; j<=5; j++))
+    do
+        echo -n " "
+    done
+    echo "*"
+done
+for ((i=1; i<=7; i++))
+do
+    echo -n "*"
+done
+echo ""
+[root@DESKTOP-73GSIST ~]# chmod 777 04.25q3.sh
+[root@DESKTOP-73GSIST ~]# ./04.25q3.sh
+*******
+*     *
+*     *
+*     *
+*     *
+*******
+
+Q4).Fibbonacci Series:
+0 1 1 2 3 5 8 13 21 34
+sum of the first 10 Fibbonacci numbers is :88
+
+Code:-
+a=0
+b=1
+sum=0
+
+echo "Fibonacci Series:"
+
+for ((i=1; i<=10; i++))
+do
+    echo -n "$a "
+    sum=$((sum + a))
+    
+    # Calculate next number
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+
+echo ""
+echo "Sum of the first 10 Fibonacci numbers is: $sum"
+
+Answer:
+
+[root@DESKTOP-73GSIST ~]# vi 04.25q4.sh
+[root@DESKTOP-73GSIST ~]# more 04.25q4.sh
+a=0
+b=1
+sum=0
+
+echo "Fibonacci Series:"
+
+for ((i=1; i<=10; i++))
+do
+    echo -n "$a "
+    sum=$((sum + a))
+
+    # Calculate next number
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+
+echo ""
+echo "Sum of the first 10 Fibonacci numbers is: $sum"
+[root@DESKTOP-73GSIST ~]# chmod 777 04.25q4.sh
+[root@DESKTOP-73GSIST ~]# ./04.25q4.sh
+Fibonacci Series:
+0 1 1 2 3 5 8 13 21 34
+Sum of the first 10 Fibonacci numbers is: 88
+
+Q5).Sum of prime numbers between 1 and 100 is: 1060
+
+code:-
+
+sum=0
+for ((num=2; num<=100; num++))
+do
+    is_prime=1
+    for ((i=2; i*i<=num; i++))
+    do
+        if ((num % i == 0))
+        then
+            is_prime=0
+            break
+        fi
+    done
+
+    if ((is_prime == 1))
+    then
+        echo -n "$num "
+        sum=$((sum + num))
+    fi
+done
+
+echo ""
+echo "Sum of prime numbers between 1 and 100 is: $sum"
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi 04.25q5.sh
+[root@DESKTOP-73GSIST ~]# more 04.25q5.sh
+sum=0
+for ((num=2; num<=100; num++))
+do
+    is_prime=1
+    for ((i=2; i*i<=num; i++))
+    do
+        if ((num % i == 0))
+        then
+            is_prime=0
+            break
+        fi
+    done
+
+    if ((is_prime == 1))
+    then
+        echo -n "$num "
+        sum=$((sum + num))
+    fi
+done
+
+echo ""
+echo "Sum of prime numbers between 1 and 100 is: $sum"
+
+[root@DESKTOP-73GSIST ~]# chmod 777 04.25q5.sh
+[root@DESKTOP-73GSIST ~]# ./04.25q5.sh
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+Sum of prime numbers between 1 and 100 is: 1060
