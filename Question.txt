@@ -1,0 +1,175 @@
+Q1).write a code for small astrology based on your life path number for that get date of birth
+from user then calculate life path number.(use switch cate)
+Example:-
+	date: 23
+	
+	calculation for life path number:
+						a=date%10
+						b=date/10
+						c=a+b
+	
+	if life path number:
+					1:Lucky
+					2:carefuly do your work
+					3.storger
+					4.Happy
+					5.can get help
+					6.Doubt
+					7.Sad
+					8.Like
+					9.CourageL
+code:-
+echo "Enter the birth Date: "
+read date
+a=$(($date %10))
+b=$(($date /10))
+c=$(($a+$b))
+case $c in
+1) echo "Lucky" ;;
+2) echo "Carefully do work" ;;
+3) echo "Storger" ;;
+4) echo "Happy" ;;
+5) echo "can get Help" ;;
+6) echo "Doubt" ;;
+7) echo "Sad" ;;
+8) echo "Like" ;;
+9) echo "Courage" ;;
+*) echo "Invalid" ;;
+esac
+
+Answer:-
+
+[root@DESKTOP-73GSIST ~]# vi 04_07file.sh
+[root@DESKTOP-73GSIST ~]# more 04_07file.sh
+echo "Enter the birth Date: "
+read date
+a=$(($date %10))
+b=$(($date /10))
+c=$(($a+$b))
+case $c in
+1) echo "Lucky" ;;
+2) echo "Carefully do work" ;;
+3) echo "Storger" ;;
+4) echo "Happy" ;;
+5) echo "can get Help" ;;
+6) echo "Doubt" ;;
+7) echo "Sad" ;;
+8) echo "Like" ;;
+9) echo "Courage" ;;
+*) echo "Invalid" ;;
+esac
+[root@DESKTOP-73GSIST ~]# chmod 777 04_07file.sh
+[root@DESKTOP-73GSIST ~]# ./04_07file.sh
+Enter the birth Date:
+18
+Courage
+
+Q2).Give list of numbers then calculate the summation and multiplication
+using for loop.
+Example:-
+	1 2 3 4 5
+		summation = 15
+		multiplication = 120
+
+Answer:-
+
+echo "Enter a number:"
+read num
+sum=0;
+mul=1;
+for num in 1 2 3 4 5
+do
+sum=$((sum + num))
+mul=$((mul * num))
+done
+echo "Summation = $sum"
+echo "Multiplication = $mul"
+
+Q3).Print the integer from  1 to 10 using while loop.
+let i=1
+while [ $i -le 10 ]
+do
+echo $i;
+i=$(($i+1))
+done
+**************
+
+Answer:-
+[root@DESKTOP-73GSIST ~]# vi whileloop.sh
+[root@DESKTOP-73GSIST ~]# more whileloop.sh
+let i=1
+while [ $i -le 10 ]
+do
+echo $i;
+i=$(($i+1))
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 whileloop.sh
+[root@DESKTOP-73GSIST ~]# ./whileloop.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Q4).Print below pattern using nested loop column =7, row =7
+
+i)  	*
+	* *
+	* * *
+	* * * *
+	* * * * *
+	* * * * * *
+	* * * * * * *
+
+ii) 	* * * * * * *
+	* * * * * *
+	* * * * *
+	* * * *
+	* * *
+	* *
+	*
+
+
+[root@DESKTOP-73GSIST ~]# vi star.sh
+[root@DESKTOP-73GSIST ~]# more star.sh
+for((i=1;i<=7;i++))
+do
+for((j=0;j<i;j++))
+do
+echo -n " * "
+done
+echo ""
+done
+
+echo ""
+
+for((i=1;i<=7;i++))
+do
+for((j=7;j>i;j--))
+do
+echo -n " * "
+done
+echo ""
+done
+[root@DESKTOP-73GSIST ~]# chmod 777 star.sh
+[root@DESKTOP-73GSIST ~]# ./star.sh
+ *
+ *  *
+ *  *  *
+ *  *  *  *
+ *  *  *  *  *
+ *  *  *  *  *  *
+ *  *  *  *  *  *  *
+
+ *  *  *  *  *  *
+ *  *  *  *  *
+ *  *  *  *
+ *  *  *
+ *  *
+ *
+
