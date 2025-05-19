@@ -1,0 +1,121 @@
+Q1: Print Hello World
+
+#include <stdio.h>
+int main() {
+    printf("Hello World!");
+    return 0;
+}
+
+Q2: Declare a Variable and Print
+
+#include <stdio.h>
+int main() {
+    int age = 25; // Declare and assign value
+    printf("%d", age);
+    return 0;
+}
+
+Q3: Assign New Value to Same Variable
+
+#include <stdio.h>
+int main() {
+    int age = 25;
+    printf("Age: %d", age);
+    age = 31;
+    printf("\nNew age: %d", age);
+    return 0;
+}
+
+Q4: Assign Same Value to Two Variables
+
+#include <stdio.h>
+int main() {
+    int firstnumber = 25;
+    int secondnumber = firstnumber;
+    printf("First number: %d\n", firstnumber);
+    printf("Second number: %d", secondnumber);
+    return 0;
+}
+
+Q5: Declare Multiple Variables in One Line
+
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20, c = 30;
+    printf("a = %d, b = %d, c = %d", a, b, c);
+    return 0;
+}
+
+Q6: Data Type and Size
+
+#include <stdio.h>
+int main() {
+    int age = 10;
+    printf("Age = %d\n", age);
+    printf("Size of age = %zu bytes", sizeof(age));
+    return 0;
+}
+
+Q7: Working with float, double, and char
+
+#include <stdio.h>
+int main() {
+    double number = 12.45;
+    float fnumber = 100.5f;
+    char character = 'z';
+
+    printf("Double number = %.2lf\n", number);
+    printf("Float number = %.2f\n", fnumber);
+    printf("Character = %c\n", character);
+
+    return 0;
+}
+
+Q8: User Input for Integer
+
+#include <stdio.h>
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("Age = %d", age);
+    return 0;
+}
+
+Q9: Take Multiple Inputs Together
+
+#include <stdio.h>
+int main() {
+    double number;
+    char alpha;
+
+    printf("Enter a double and a character: ");
+    scanf("%lf %c", &number, &alpha);
+
+    printf("Double = %.2lf\n", number);
+    printf("Character = %c", alpha);
+    return 0;
+}
+
+Q10: Comments in C
+
+// Single-line comment (use Ctrl + / in some editors)
+
+/*
+   Multi-line comment
+   Use Ctrl + Shift + / in some editors
+*/
+
+Q11.C Arithmetic Operations Program
+
+#include <stdio.h>
+int main() {
+    int a = 10, b = 3;
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b); // Integer division
+    printf("a %% b = %d\n", a % b); // Remainder
+
+    return 0;
+}
