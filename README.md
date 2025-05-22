@@ -1,1 +1,6 @@
-# IT2244-Operating-System
+# IT2244-Operating-System![q1](https://github.com/user-attachments/assets/ab7726b7-7eac-4578-bf3b-dfb0ceb0489a)
+![q2](https://github.com/user-attachments/assets/c0c7ec6e-8701-4abb-96d8-f84619691272)
+![q3](https://github.com/user-attachments/assets/628de18d-294d-4041-8ae5-d9349edbb43a)
+![q4](https://github.com/user-attachments/assets/7755372e-8871-4db9-969d-66afd60930b2)
+![q5](https://github.com/user-attachments/assets/f33f939c-3946-4fb7-97dd-1e6aeba97ce4)
+![Uploading q6.PNG…]()
