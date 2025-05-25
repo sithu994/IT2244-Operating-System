@@ -1,0 +1,75 @@
+Write a "c program" to Enter three numbers from user & then
+using parent-child process find factorial,power of entered number 
+and square of entered numbers and also print 
+pid and ppid each of them.
+Entering three numbers is parent and three others are child of it 
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <math.h>
+
+int main() {
+    int num1, num2, num3;
+
+    // Parent input
+    printf("Enter three numbers:\n");
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    int f1 = fork();
+
+    if (f1 == 0) 
+	{
+        // First child - factorial of num1
+        int fact = 1;
+        for (int i = 1; i <= num1; i++) 
+		{
+            fact *= i;
+        }
+        printf("\n[Factorial Process] PID: %d, PPID: %d\n", getpid(), getppid());
+        printf("Factorial of %d = %d\n", num1, fact);
+        exit(0);
+    } 
+	else 
+	{
+        int f2 = fork();
+
+        if (f2 == 0) 
+		{
+            // Second child - power (num2^1)
+            double power = pow(num2, 1);
+            printf("\n[Power Process] PID: %d, PPID: %d\n", getpid(), getppid());
+            printf("%d raised to power 1 = %.0f\n", num2, power);
+            exit(0);
+        } 
+		else 
+		{
+            int f3 = fork();
+
+            if (f3 == 0) 
+			{
+                // Third child - square of num3
+                int square = num3 * num3;
+                printf("\n[Square Process] PID: %d, PPID: %d\n", getpid(), getppid());
+                printf("Square of %d = %d\n", num3, square);
+                exit(0);
+            } 
+			else 
+			{
+                // Parent process
+                wait(NULL);
+                wait(NULL);
+                wait(NULL);
+                printf("\n[Parent Process] PID: %d\n", getpid());
+            }
+        }
+    }
+
+    return 0;
+}
+
+
