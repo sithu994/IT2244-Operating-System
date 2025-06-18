@@ -1,0 +1,58 @@
+//print numbers from 1 to 10 and
+//1 to 5 should be print by child process and from 6 to 10 should be parent process
+//calculate summation of those number
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    pid_t pid; // pid_t = data type
+    int sum = 0;
+
+    pid = fork(); // Creating child process
+
+    if (pid < 0) 
+	{
+        return 1; // Exit on failure
+    } 
+	else if (pid == 0) 
+	{ 
+        printf("Child process:\n");
+        for (int i = 1; i <= 5; i++) 
+	{
+            printf("%d\n", i);
+            sum += i;
+    }
+        printf("Child Process Sum: %d\n", sum);
+    } 
+	else 
+	{ // Parent process
+        printf("Parent process:\n");
+        for (int i = 6; i <= 10; i++) 
+		{
+            printf("%d\n", i);
+            sum += i;
+        }
+        printf("Parent Process Sum: %d\n", sum);
+        printf("Total Sum: %d\n", sum);
+    }
+
+    return 0;
+}
+int main(){
+
+int id=fork();
+int n;
+if(id==0)
+{
+n=1;
+}
+else{
+n=6;
+}
+for(int i=n;i<n+5;i++)
+{
+printf("%d",i);
+}
+printf("\n");
+return 0;
+}
